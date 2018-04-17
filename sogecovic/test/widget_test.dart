@@ -8,14 +8,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sogecovic/objetos.dart';
 
-import 'package:sogecovic/cashier/main.dart';
-import 'package:sogecovic/central/main.dart';
-import 'package:sogecovic/cusine/main.dart';
 import 'package:sogecovic/customer/main.dart';
-import 'package:sogecovic/cupbearer/main.dart';
-import 'package:sqljocky5/constants.dart';
-import 'package:sqljocky5/sqljocky.dart';
-import 'package:sqljocky5/utils.dart';
 
 
 void main() {

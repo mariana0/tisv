@@ -13,7 +13,7 @@ class CashierApp extends StatelessWidget {
 					title: new Text('Welcome to Flutter'),
 				),
 				body: new Center(
-					child: new Text('AHSJAHSJAHSJAHSJAHSJAHSJH'),
+					child: new Text('Lorem Ipsun Dolor Sit Amet'),
 				),
 			),
 		);

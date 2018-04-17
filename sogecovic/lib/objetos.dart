@@ -6,7 +6,7 @@ class Restaurante {
 
     Restaurante() {
         cardapio = new Map<int,Item>();
-        saguao = new Map<int,Mesa>();
+        saguao = new Map<int,Mesa>();        
     }
 
     void abreMesa(int num){
@@ -32,28 +32,27 @@ class Restaurante {
 }
 
 class Mesa {
+    int id;
     int numeroMesa;
     DateTime abertura;
     DateTime fechamento;
     List<Pedido> pedidos;
-    bool fechada;
 
     Mesa(int num) {
         this.numeroMesa = num;
         abertura = new DateTime.now();
         fechamento = null;
         pedidos = new List<Pedido>();
-        fechada = false;
     }
 
     void fechaMesa() {
-        this.fechada = true;
+        this.fechamento = new DateTime.now();
     }
 
     int novoPedido(Item item){
         Pedido p = new Pedido(item, this);
-        pedidos[p.id] = p;;
-        return p.id;
+        pedidos.add(p);
+        return pedidos.length-1;
     }
 
     @override
@@ -61,10 +60,10 @@ class Mesa {
         return 'Mesa{numeroMesa: $numeroMesa, abertura: $abertura, fechamento: $fechamento, pedidos: $pedidos}';
     }
 
-  void cancelaPedido(int pedido) {
-        pedidos[pedido].cancelaPedido();
-        pedidos.removeAt(pedido);
-  }
+    void cancelaPedido(int pedido) {
+            pedidos[pedido].cancelaPedido();
+            pedidos.removeAt(pedido);
+    }
 
 }
 
